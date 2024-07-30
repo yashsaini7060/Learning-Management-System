@@ -1,6 +1,6 @@
-# Learning Management Website
+# Learning Management System Website
 
-This is a full-stack learning management website that allows users to buy courses, view videos, and manage their account. Administrators can add new courses. The project uses various technologies for both the frontend and backend development.
+This is a full-stack learning management system website that allows users to buy courses, view videos, and manage their account. Administrators can add new courses. The project uses various technologies for both the frontend and backend development.
 
 ## Features
 
@@ -97,7 +97,7 @@ This is a full-stack learning management website that allows users to buy course
 - Create a `.env` file in the frontend directory with the following environment variables:
 
   ```bash
-  REACT_APP_API_URL=http://localhost:5000
+  BASE_URL=http://localhost:5014/api/v1
   ```
 - Start the frontend development server:
 
