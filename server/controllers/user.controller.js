@@ -10,9 +10,9 @@ import sendEmail from '../utils/sendEmail.js';
 
 const cookieOptions = {
   secure: process.env.NODE_ENV === 'production' ? true : false,
-  sameSite: "None",
-  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-  httpOnly: true,
+  sameSite: process.env.NODE_ENV === 'production' ? "None" : "Lax", // Lax for development
+  maxAge: 7 * 24 * 60 * 60, // 7 days in seconds
+  // httpOnly: true,
 };
 
 /**
