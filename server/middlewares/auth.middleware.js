@@ -1,11 +1,13 @@
 import jwt from "jsonwebtoken";
 
-import AppError from "../utils/AppError.js";
+import AppError from "../utils/appError.js";
 import asyncHandler from "./asyncHandler.middleware.js";
 
 export const isLoggedIn = asyncHandler(async (req, _res, next) => {
   // extracting token from the cookies
-  const { token } = req.cookies;
+  const token =
+    (Object.keys(req.cookies).length > 1 && req.cookies.token) ||
+    (req.headers.authorization && req.headers["authorization"].split(" ")[1]);
 
   // If no token send unauthorized message
   if (!token) {
